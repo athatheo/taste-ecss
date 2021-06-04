@@ -1,0 +1,6 @@
+#ifndef st05eventreport_EventActionTC05_INCLUDED
+#define st05eventreport_EventActionTC05_INCLUDED
+
+void prv_st05eventreport_EventActionTC05_Task(void* prParameters);
+
+#endif

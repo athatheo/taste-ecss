@@ -1,0 +1,28 @@
+--  Scnenario file for Ocarina used to generate PolyORB-HI code
+--  Syntax for manual use: ocarina -x main.aadl
+--  This file was generated automatically by taste/kazoo - do not edit
+system Taste
+properties
+ Ocarina_Config::AADL_Files =>
+    ("../../InterfaceView.aadl",
+     "../../DeploymentView.aadl",
+     "../dataview/dataview_aadlv2.aadl",
+     "system.aadl",
+     "ocarina_components.aadl",
+     "TASTE_IV_Properties.aadl",
+     "TASTE_DV_Properties.aadl");
+ Ocarina_Config::Generator => polyorb_hi_c;
+ Ocarina_Config::Generator_Options => ();
+ Ocarina_Config::AADL_Version => AADLv2;
+ Ocarina_Config::Needed_Property_Sets => (
+  "data_model",
+  "base_types",
+  value (Ocarina_Config::arinc653_properties),
+  value (Ocarina_Config::Deployment),
+  value (Ocarina_Config::Cheddar_Properties),
+  value (Ocarina_Config::TASTE_Properties));
+  Ocarina_Config::Root_System_name => "deploymentview.final";
+end Taste;
+
+system implementation Taste.impl
+end Taste.impl;

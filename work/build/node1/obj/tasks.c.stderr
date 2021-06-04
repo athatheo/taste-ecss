@@ -1,0 +1,15 @@
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/tasks.c: In function 'prvInitialiseNewTask':
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/tasks.c:862:40: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   pxTopOfStack = ( StackType_t * ) ( ( ( portPOINTER_SIZE_TYPE ) pxTopOfStack ) & ( ~( ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) ) ); /*lint !e923 !e9033 !e9078 MISRA exception.  Avoiding casts between pointers and integers is not practical.  Size differences accounted for using portPOINTER_SIZE_TYPE type.  Checked by assert(). */
+                                        ^
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/tasks.c:862:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   pxTopOfStack = ( StackType_t * ) ( ( ( portPOINTER_SIZE_TYPE ) pxTopOfStack ) & ( ~( ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) ) ); /*lint !e923 !e9033 !e9078 MISRA exception.  Avoiding casts between pointers and integers is not practical.  Size differences accounted for using portPOINTER_SIZE_TYPE type.  Checked by assert(). */
+                  ^
+In file included from ../FreeRTOS/Source/include/FreeRTOS.h:56,
+                 from /home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/tasks.c:38:
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/tasks.c:865:21: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   configASSERT( ( ( ( portPOINTER_SIZE_TYPE ) pxTopOfStack & ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) == 0UL ) );
+                     ^
+/home/taste/Desktop/Thesis/work/build/node1/msp430fr5969_partition/FreeRTOSConfig.h:67:33: note: in definition of macro 'configASSERT'
+ #define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }
+                                 ^

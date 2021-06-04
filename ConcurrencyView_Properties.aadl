@@ -1,0 +1,27 @@
+
+PACKAGE Process_Package_proxy
+PUBLIC
+WITH Process_Package;
+WITH AI;
+
+SYSTEM DeploymentView
+EXTENDS Process_Package::DeploymentView
+END DeploymentView;
+
+SYSTEM IMPLEMENTATION DeploymentView.final
+EXTENDS Process_Package::DeploymentView.final
+PROPERTIES
+  AI::root_system => "SELECTED";
+  Priority => 2 APPLIES TO msp430fr5969_partition.st05eventreport_tc05;
+  Priority => 3 APPLIES TO msp430fr5969_partition.st08functionmanagement_eventactiontc08;
+  Priority => 4 APPLIES TO msp430fr5969_partition.st08functionmanagement_tc08;
+  Priority => 4 APPLIES TO msp430fr5969_partition.st11timebasedscheduling_eventactiontc11;
+  Priority => 4 APPLIES TO msp430fr5969_partition.st11timebasedscheduling_tc11;
+  Priority => 4 APPLIES TO msp430fr5969_partition.st19eventaction_tc19;
+  Priority => 4 APPLIES TO msp430fr5969_partition.st20parameterservice_eventactiontc20;
+  Priority => 4 APPLIES TO msp430fr5969_partition.st20parameterservice_tc20;
+  Priority => 4 APPLIES TO msp430fr5969_partition.tc_handler_tc;
+END DeploymentView.final;
+
+END Process_Package_proxy;
+

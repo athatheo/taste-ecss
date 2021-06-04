@@ -1,0 +1,13 @@
+/home/taste/Desktop/Thesis/work/dataview/C/asn1crt_encoding.c: In function 'BitStream_EncodeOctetString_fragmentation':
+/home/taste/Desktop/Thesis/work/dataview/C/asn1crt_encoding.c:1252:27: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+   if (nRemainingItemsVar1 >= 0x10000)
+                           ^~
+/home/taste/Desktop/Thesis/work/dataview/C/asn1crt_encoding.c:1254:21: warning: overflow in conversion from 'long int' to 'int' changes value from '65536' to '0' [-Woverflow]
+    nCurBlockSize1 = 0x10000;
+                     ^~~~~~~
+/home/taste/Desktop/Thesis/work/dataview/C/asn1crt_encoding.c:1257:32: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   else if (nRemainingItemsVar1 >= 0xC000)
+                                ^~
+/home/taste/Desktop/Thesis/work/dataview/C/asn1crt_encoding.c:1262:32: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   else if (nRemainingItemsVar1 >= 0x8000)
+                                ^~

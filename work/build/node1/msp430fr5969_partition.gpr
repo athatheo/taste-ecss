@@ -1,0 +1,205 @@
+--  Node name          : msp430fr5969_partition
+--  Execution platform : PLATFORM_MSP430_FREERTOS
+--  This file is generated for MSP430 with FreeRTOS
+
+project Msp430fr5969_Partition is
+
+   type Build_Type is ("Debug", "Release");
+   Build : Build_Type := external ("CFG", "Debug");
+
+   --  following to be updated with all relevant source dirs
+   for Source_Dirs use
+      ("msp430fr5969_partition",
+       "../../st05eventreport/CPP/src",
+       "../../st05eventreport/CPP/wrappers",
+       "../../st08functionmanagement/CPP/src",
+       "../../st08functionmanagement/CPP/wrappers",
+       "../../st11timebasedscheduling/CPP/src",
+       "../../st11timebasedscheduling/CPP/wrappers",
+       "../../st19eventaction/CPP/src",
+       "../../st19eventaction/CPP/wrappers",
+       "../../st20parameterservice/CPP/src",
+       "../../st20parameterservice/CPP/wrappers",
+       "../../tc_handler/CPP/src",
+       "../../tc_handler/CPP/wrappers",
+       "../../dataview/C",
+       "FreeRTOS/Source",
+       "FreeRTOS/Source/portable/GCC/MSP430FR5969")
+       & external_as_list("EXTERNAL_SOURCE_PATH", ":")
+       & external_as_list("MSP430FR5969_PARTITION_EXTERNAL_SOURCE_PATH", ":");
+
+   for Object_Dir use "obj";
+   for Exec_Dir   use "../../binaries";
+
+   for Languages use ("C", "C++", "Ada");
+
+   for Main use ("main.c");
+
+   package Naming is
+       for Body_Suffix ("C++") use ".cc";
+	   for Body_Suffix ("Ada") use ".adb";
+   end Naming;
+
+   package Binder is
+      for Driver ("Ada")  use "msp430-elf-adabind";
+   end Binder;
+
+   -- Need_Ada : 
+
+   package Compiler is
+      for Driver ("C") use "msp430-elf-gcc";
+      for Driver ("C++") use "msp430-elf-g++";
+      for Driver ("Ada") use "msp430-elf-adac";
+
+      for Required_Switches ("C") use ("-c");
+      for Required_Switches ("Ada") use ("-c");
+
+      case Build is
+         when "Release" =>
+            for Default_Switches ("C") use
+               ("-I/opt/msp430-gcc/include/",
+                "-I.",
+                "-I../FreeRTOS/Source/include",
+                "-I../FreeRTOS/Source/portable/GCC/MSP430FR5969",
+                "-I../../deploymentview_final/msp430fr5969_partition",
+                "-I../../deploymentview_final/polyorb-hi-c/include",
+                "-DWORD_SIZE=4",
+                "-mmcu=msp430fr5969",
+                "-D__LARGE_DATA_MODEL__=1",
+                "-mlarge",
+                "-mcode-region=either",
+                "-mdata-region=upper",
+                "-ffunction-sections",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Wno-unused-parameter",
+                "-Wl,--gc-sections",
+                "-g",
+                "-Os")
+                & external_as_list("MSP430FR5969_PARTITION_USER_CFLAGS", " ")
+                & external_as_list("USER_CFLAGS", " ");
+            for Default_Switches ("C++") use
+               ("-I/opt/msp430-gcc/include/",
+                "-I.",
+                "-I../FreeRTOS/Source/include",
+                "-I../FreeRTOS/Source/portable/GCC/MSP430FR5969",
+                "-I../../deploymentview_final/msp430fr5969_partition",
+                "-I../../deploymentview_final/polyorb-hi-c/include",
+                "-DWORD_SIZE=4",
+                "-mmcu=msp430fr5969",
+                "-D__LARGE_DATA_MODEL__=1",
+                "-mlarge",
+                "-mcode-region=either",
+                "-mdata-region=upper",
+                "-ffunction-sections",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Wno-unused-parameter",
+                "-Wl,--gc-sections",
+                "-g",
+                "-Os")
+                & external_as_list("MSP430FR5969_PARTITION_USER_CFLAGS", " ")
+                & external_as_list("USER_CFLAGS", " ");
+            for Default_Switches ("Ada") use
+               ("-Wgnat,-I.",
+                "-Wgnat,-gnateDWORD_SIZE=4",
+                "-Wgnat,-I../../../dataview/Ada/asn1rtl",
+                "-Wgnat,-I../../../dataview/Ada/src",
+                "-Wgnat,-I../../../dataview/Ada/boards/msp430",
+                "-Wgnat,-I../FreeRTOS/Source/include",
+                "-Wgnat,-I../FreeRTOS/Source/portable/GCC/MSP430FR5969",
+                "-Wgnat,-I../../deploymentview_final/msp430fr5969_partition",
+                "-Wgnat,-I../../deploymentview_final/polyorb-hi-c/include");
+         when "Debug" =>
+            for Default_Switches ("C") use
+               ("-I/opt/msp430-gcc/include/",
+                "-I.",
+                "-I../FreeRTOS/Source/include",
+                "-I../FreeRTOS/Source/portable/GCC/MSP430FR5969",
+                "-I../../deploymentview_final/msp430fr5969_partition",
+                "-I../../deploymentview_final/polyorb-hi-c/include",
+                "-DWORD_SIZE=4",
+                "-mmcu=msp430fr5969",
+                "-D__LARGE_DATA_MODEL__=1",
+                "-mlarge",
+                "-mcode-region=either",
+                "-mdata-region=upper",
+                "-ffunction-sections",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Wno-unused-parameter",
+                "-O0",
+                "-g")
+                & external_as_list("MSP430FR5969_PARTITION_USER_CFLAGS", " ")
+                & external_as_list("USER_CFLAGS", " ");
+            for Default_Switches ("C++") use
+               ("-I/opt/msp430-gcc/include/",
+                "-I.",
+                "-I../FreeRTOS/Source/include",
+                "-I../FreeRTOS/Source/portable/GCC/MSP430FR5969",
+                "-I../../deploymentview_final/msp430fr5969_partition",
+                "-I../../deploymentview_final/polyorb-hi-c/include",
+                "-DWORD_SIZE=4",
+                "-mmcu=msp430fr5969",
+                "-D__LARGE_DATA_MODEL__=1",
+                "-mlarge",
+                "-mcode-region=either",
+                "-mdata-region=upper",
+                "-ffunction-sections",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Wno-unused-parameter",
+                "-O0",
+                "-g")
+                & external_as_list("MSP430FR5969_PARTITION_USER_CFLAGS", " ")
+                & external_as_list("USER_CFLAGS", " ");
+            for Default_Switches ("Ada") use
+               ("-I.",
+                "-Wgnat,-gnateDWORD_SIZE=4",
+                "-Wgnat,-I../../../dataview/Ada/asn1rtl",
+                "-Wgnat,-I../../../dataview/Ada/src",
+                "-Wgnat,-I../../../dataview/Ada/boards/msp430",
+                "-Wgnat,-I../FreeRTOS/Source/include",
+                "-Wgnat,-I../FreeRTOS/Source/portable/GCC/MSP430FR5969",
+                "-Wgnat,-I../../deploymentview_final/msp430fr5969_partition",
+                "-Wgnat,-I../../deploymentview_final/polyorb-hi-c/include");
+      end case;
+   end Compiler;
+
+   package Linker is
+      for Driver use "msp430-elf-gcc";
+
+      for Default_Switches ("C") use
+         ("-L/opt/ti/msp430-gcc/include/",
+          "-I/opt/ti/msp430-gcc/include/",
+          "-I.",
+          "-I../FreeRTOS/Source/include",
+          "-I../FreeRTOS/Source/portable/GCC/MSP430FR5969",
+          "-DWORD_SIZE=4",
+          "-mmcu=msp430fr5969",
+	      "-D__LARGE_DATA_MODEL__=1",
+    	  "-mlarge",
+          "-mcode-region=either",
+          "-mdata-region=upper",
+          "-mrelax",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Wno-unused-parameter",
+          "-Wl,-Map=main.map",
+          "-Wl,--gc-sections",
+          "-Tmsp430fr5969.ld")
+          & external_as_list("MSP430FR5969_PARTITION_USER_LDFLAGS", " ")
+          & external_as_list("USER_LDFLAGS", " ");
+
+   end Linker;
+
+   package Builder is
+      for Executable ("main.c") use "msp430fr5969_partition";
+   end Builder;
+
+end Msp430fr5969_Partition;

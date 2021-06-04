@@ -1,0 +1,6 @@
+PUS-ST220 DEFINITIONS ::=
+BEGIN
+	Pus-220-StateId ::= ENUMERATED {
+		
+	}
+END

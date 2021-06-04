@@ -1,0 +1,12 @@
+--  Node name          : msp430fr5969_partition
+--  Execution platform : PLATFORM_MSP430_FREERTOS msp430fr5969_freertos PLATFORM_MSP430_FREERTOS ocarina_processors_msp430::msp430fr5969.freertos ocarina_processors_msp430 msp430fr5969 freertos
+
+
+aggregate project Msp430fr5969_Partition_Zynq is
+for Project_Files use (
+"msp430fr5969_partition_zynq_rtems.gpr"
+);
+
+
+end Msp430fr5969_Partition_Zynq;
+

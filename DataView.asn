@@ -1,0 +1,106 @@
+THESIS-DATAVIEW DEFINITIONS ::=
+BEGIN
+
+   MyInteger ::= INTEGER (0 .. 10000)
+
+
+UInt8 ::= INTEGER (0 .. 255)
+
+UInt16 ::= INTEGER (0 .. 65535)
+
+Packet ::= SEQUENCE SIZE(100) OF UInt8
+
+Message ::= SEQUENCE {
+ packetType ENUMERATED {tm(0),tc(1)},
+ serviceType UInt8,
+ messageType UInt8,
+ applicationId UInt16,
+ messageTypeCounter UInt16,
+ packetSequenceCount UInt16,
+ dataSize UInt16,
+ data SEQUENCE SIZE(1024) OF UInt16
+}
+
+
+EventOccured ::= ENUMERATED {
+        informativeUnknownEvent(0), 
+        wwdgReset(1),
+        assertionFail(2),
+        mCUStart(3),
+        lowSeverityUnknownEvent(4),
+        mediumSeverityUnknownEvent(5),
+        highSeverityUnknownEvent(6),
+        failedStartOfExecution(7)
+}
+
+AcceptanceErrorOccured ::= ENUMERATED{
+        unknownAcceptanceError(0),
+        messageTooShort(1),
+        tooManyBitsRead(2),
+        stringTooShort(4),
+        unacceptableMessage(5)
+}
+
+RoutingErrorType ::= ENUMERATED {
+ unknownRoutingError(0)
+}
+
+ExecutionStartErrorType ::= ENUMERATED {
+		unknownExecutionStartError(0),
+		eventActionDefinitionIDExistsError(1),
+		eventActionDeleteEnabledDefinitionError(2),
+		eventActionUnknownEventDefinitionError(3),
+		eventActionUnknownEventActionDefinitionIDError(4),
+		subServiceExecutionStartError(5),
+		instructionExecutionStartError(6),
+		setNonExistingParameter(7),
+		getNonExistingParameter(8)
+	}
+
+
+ExecutionProgressErrorType ::= ENUMERATED  {
+		unknownExecutionProgressError(0)
+	}
+
+ExecutionCompletionErrorType ::= ENUMERATED  {
+		unknownExecutionCompletionError(0),
+		checksumFailed(1),
+		addressOutOfRange(2)
+	}
+-- ASN.1 Type definitions must start with an uppercase
+-- Field names in records (SEQUENCE) must start with a lowercase
+-- Underscores are not allowed: use dash (hyphen) 
+-- For integers do not assume that small ranges will be translated to small
+-- types in C or Ada (expect unsigned or signed 64 bits types with subtypes
+-- for the range in Ada)
+
+-- Simple types:
+
+-- TASTE-Boolean ::= BOOLEAN
+-- MyInteger   ::= INTEGER (0..255)
+-- MyReal      ::= REAL (0.0 .. 1000.0)
+-- MyBool      ::= BOOLEAN
+-- MyEnum      ::= ENUMERATED { hello, world, how-are-you }
+
+-- Complex types:
+
+--  MySeq       ::= SEQUENCE {
+--      input-data  MyInteger,
+--      output-data MyInteger,
+--      validity    ENUMERATED { valid, invalid }
+--  }
+--
+--  MyChoice    ::= CHOICE {
+--      a BOOLEAN,
+--      b MySeq
+--  }
+--
+--  MySeqOf     ::= SEQUENCE (SIZE (2)) OF MyEnum
+--
+--  MyOctStr    ::= OCTET STRING (SIZE (3))
+--
+--  -- You can also declare constants
+--  myVar       MySeqOf     ::= { hello, world }
+
+END
+

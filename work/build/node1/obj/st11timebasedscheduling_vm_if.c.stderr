@@ -1,0 +1,6 @@
+In file included from /home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.h:15,
+                 from /home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/wrappers/st11timebasedscheduling_vm_if.h:30,
+                 from /home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/wrappers/st11timebasedscheduling_vm_if.c:10:
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.h:598:9: warning: struct has no members [-Wpedantic]
+ typedef struct {
+         ^~~~~~

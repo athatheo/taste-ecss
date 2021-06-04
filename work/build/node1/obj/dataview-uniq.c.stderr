@@ -1,0 +1,11 @@
+In file included from /home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.c:12:
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.h:598:9: warning: struct has no members [-Wpedantic]
+ typedef struct {
+         ^~~~~~
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.c: In function 'asn1SccT_Int32_IsConstraintValid':
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.c:1760:27: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+     ret = ((-2147483648LL <= (*(pVal))) && ((*(pVal)) <= 2147483647LL));
+                           ^~
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.c:1760:55: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+     ret = ((-2147483648LL <= (*(pVal))) && ((*(pVal)) <= 2147483647LL));
+                                                       ^~

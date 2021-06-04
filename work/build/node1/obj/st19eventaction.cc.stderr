@@ -1,0 +1,23 @@
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc: In function 'void eventActionStatusReport()':
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc:178:17: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+  asn1SccMessage report;
+                 ^~~~~~
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc: In function 'void disableEventActionDefinitions(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc:216:10: warning: variable 'definitionIDexists' set but not used [-Wunused-but-set-variable]
+     bool definitionIDexists = false;
+          ^~~~~~~~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc: In function 'void enableEventActionDefinitions(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc:248:10: warning: variable 'definitionIDexists' set but not used [-Wunused-but-set-variable]
+     bool definitionIDexists = false;
+          ^~~~~~~~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc: In function 'void deleteEventActionDefinitions(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc:279:7: warning: variable 'definitionIDexists' set but not used [-Wunused-but-set-variable]
+  bool definitionIDexists = false;
+       ^~~~~~~~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc: In function 'const asn1SccMessage* parseECSSTC(uint8_t*)':
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc:315:10: warning: unused variable 'pusVersion' [-Wunused-variable]
+  uint8_t pusVersion = data[0] >> 4;
+          ^~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st19eventaction/CPP/src/st19eventaction.cc:313:22: warning: 'message' is used uninitialized in this function [-Wuninitialized]
+  message->packetType = asn1SccMessage_packetType(1);
+  ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

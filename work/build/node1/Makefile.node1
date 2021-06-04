@@ -1,0 +1,16 @@
+\
+# This file is generated for MSP430 with FreeRTOS
+#  node1 msp430fr5969_freertos  PLATFORM_MSP430_FREERTOS ocarina_processors_msp430::msp430fr5969.freertos
+
+.PHONY: all clean partitions freertos
+
+all: partitions
+
+partitions: freertos
+	gprbuild -R -p -P msp430fr5969_partition.gpr -XCFG="Release" -cargs:C -DSTATIC=""
+
+freertos:
+	sh gather_freertos_files.sh
+
+clean:
+	gprclean -P msp430fr5969_partition.gpr

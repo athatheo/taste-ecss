@@ -1,0 +1,10 @@
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/portable/GCC/MSP430FR5969/port.c: In function 'pxPortInitialiseStack':
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/portable/GCC/MSP430FR5969/port.c:164:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+         ulTemp = ( uint32_t ) pxCode;
+                  ^
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/portable/GCC/MSP430FR5969/port.c:173:26: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+         *pulTopOfStack = ( uint32_t ) pxCode;
+                          ^
+/home/taste/Desktop/Thesis/work/build/node1/FreeRTOS/Source/portable/GCC/MSP430FR5969/port.c:211:25: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+         *pxTopOfStack = ( StackType_t ) pvParameters;
+                         ^

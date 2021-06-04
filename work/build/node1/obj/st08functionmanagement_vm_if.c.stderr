@@ -1,0 +1,6 @@
+In file included from /home/taste/Desktop/Thesis/work/st08functionmanagement/CPP/src/st08functionmanagement.h:15,
+                 from /home/taste/Desktop/Thesis/work/st08functionmanagement/CPP/wrappers/st08functionmanagement_vm_if.h:30,
+                 from /home/taste/Desktop/Thesis/work/st08functionmanagement/CPP/wrappers/st08functionmanagement_vm_if.c:10:
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.h:598:9: warning: struct has no members [-Wpedantic]
+ typedef struct {
+         ^~~~~~

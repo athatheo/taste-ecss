@@ -1,0 +1,28 @@
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc: In function 'void listOfDisabledEventsReport()':
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc:89:17: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+  asn1SccMessage report;
+                 ^~~~~~
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc: In function 'void disableReportGeneration(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc:117:39: warning: ISO C++ forbids variable length array 'eventID' [-Wvla]
+     asn1SccEventOccured eventID[length];
+                                       ^
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc: In function 'void enableReportGeneration(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc:133:39: warning: ISO C++ forbids variable length array 'eventID' [-Wvla]
+     asn1SccEventOccured eventID[length];
+                                       ^
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc: In function 'void highSeverityAnomalyReport(asn1SccEventOccured, std::__cxx11::string)':
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc:152:24: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+         asn1SccMessage report;
+                        ^~~~~~
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc: In function 'void mediumSeverityAnomalyReport(asn1SccEventOccured, std::__cxx11::string)':
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc:172:24: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+         asn1SccMessage report;
+                        ^~~~~~
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc: In function 'void lowSeverityAnomalyReport(asn1SccEventOccured, std::__cxx11::string)':
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc:193:17: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+  asn1SccMessage report;
+                 ^~~~~~
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc: In function 'void informativeEventReport(asn1SccEventOccured, std::__cxx11::string)':
+/home/taste/Desktop/Thesis/work/st05eventreport/CPP/src/st05eventreport.cc:213:17: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+  asn1SccMessage report;
+                 ^~~~~~

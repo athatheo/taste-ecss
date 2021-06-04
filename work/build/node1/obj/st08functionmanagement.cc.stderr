@@ -1,0 +1,4 @@
+/home/taste/Desktop/Thesis/work/st08functionmanagement/CPP/src/st08functionmanagement.cc: In function 'void call(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st08functionmanagement/CPP/src/st08functionmanagement.cc:78:9: warning: variable 'selected' set but not used [-Wunused-but-set-variable]
+  void (*selected)(std::string);
+         ^~~~~~~~

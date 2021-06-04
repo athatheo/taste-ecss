@@ -1,0 +1,5 @@
+In file included from /home/taste/Desktop/Thesis/work/dataview/C/PrintTypesAsASN1.h:8,
+                 from /home/taste/Desktop/Thesis/work/dataview/C/PrintTypesAsASN1.c:5:
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.h:598:9: warning: struct has no members [-Wpedantic]
+ typedef struct {
+         ^~~~~~

@@ -1,0 +1,133 @@
+--  Node name          : msp430fr5969_partition
+--  Execution platform : PLATFORM_MSP430_FREERTOS msp430fr5969_freertos PLATFORM_MSP430_FREERTOS ocarina_processors_msp430::msp430fr5969.freertos ocarina_processors_msp430 msp430fr5969 freertos
+project Msp430fr5969_Partition_Zynq_RTEMS is
+
+   type Build_Type is ("Debug", "Release");
+   Build : Build_Type := external ("CFG", "Debug");
+
+   --  for Create_Missing_Dirs use "True"; (not supported in Debian 9, use -p instead)
+   for Object_Dir use "obj_rtems_with_ada";
+   for Exec_Dir   use "../../binaries";
+
+   for Languages use ("C", "C++");
+
+   for Main use ("main.c");
+
+   package Compiler is
+      Common_C_Switches :=
+          ("-Wall",
+           "-Wextra",
+           "-mthumb",
+           "-march=armv7-a",
+           "-mfpu=neon",
+           "-mfloat-abi=hard",
+           "-mtune=cortex-a9",
+           "-g",
+           "-fdiagnostics-show-option",
+           "-ffunction-sections",
+           "-fdata-sections",
+           "-Wcast-align",
+           "-Wswitch",
+           "-Wmissing-prototypes",
+           "-Wimplicit-function-declaration",
+           "-Wstrict-prototypes",
+           "-Wnested-externs",
+           "-Wl,-gc-sections");
+
+      case Build is
+         when "Release" =>
+            for Default_Switches ("C") use Common_C_Switches & ("-O2", "-DNDEBUG")
+                & external_as_list("USER_CFLAGS", "");
+         when "Debug" =>
+            for Default_Switches ("C") use Common_C_Switches & ("-D__PO_HI_USE_VCD=1")
+                & external_as_list("USER_CFLAGS", "");
+      end case;
+   end Compiler;
+
+   package Linker is
+      for Default_Switches ("C") use
+          external_as_list("USER_LDFLAGS", "");
+   end Linker;
+
+   package Builder is
+      for Executable_Suffix use ".exe";
+      for Executable ("main.c") use "msp430fr5969_partition_leon3_rtems";
+   end Builder;
+
+   --  following to be updated with all relevant source dirs
+   for Source_Dirs use
+    ("msp430fr5969_partition",
+      "/opt/rtems-5.1-2020.04.29/arm-rtems5/xilinx_zynq_zc706/lib/include",
+       "../deploymentview_final/polyorb-hi-c/src",
+       "../deploymentview_final/polyorb-hi-c/include",
+       "../../dataview/C",
+       "../../st05eventreport/CPP/src",
+       "../../st05eventreport/CPP/wrappers",
+       "../../st08functionmanagement/CPP/src",
+       "../../st08functionmanagement/CPP/wrappers",
+       "../../st11timebasedscheduling/CPP/src",
+       "../../st11timebasedscheduling/CPP/wrappers",
+       "../../st19eventaction/CPP/src",
+       "../../st19eventaction/CPP/wrappers",
+       "../../st20parameterservice/CPP/src",
+       "../../st20parameterservice/CPP/wrappers",
+       "../../tc_handler/CPP/src",
+       "../../tc_handler/CPP/wrappers",
+       "../deploymentview_final/msp430fr5969_partition")
+        & external_as_list("EXTERNAL_SOURCE_PATH", ":")
+        & external_as_list("MSP430FR5969_PARTITION_EXTERNAL_SOURCE_PATH", ":")
+        & external_as_list("ADA_INCLUDE_PATH", ":");
+
+   --  These files are not needed to use POHIC: don' t compile them
+   for Excluded_Source_Files use
+      (
+
+
+
+
+
+
+
+        "config.c",
+       "config_leon4_n2x.c",
+       "config_leon3_drvmgr.c",
+       "grspw_api.c",
+       "grspw_pkt_lib.c",
+       "po_hi_marshallers.c",
+       "marshallers.c",
+       "po_hi_driver_leon_eth.c",
+       "po_hi_driver_leon_serial.c",
+       "po_hi_driver_rtems_drvmgr_ethernet.c",
+       "po_hi_driver_rtems_drvmgr_serial.c",
+       "po_hi_driver_serial_common.c",
+       "po_hi_driver_drvmgr_common.c",
+       "po_hi_driver_rtems_drvmgr_spacewire.c",  -- misses an include
+       "po_hi_driver_exarm.c",
+       "po_hi_driver_exarm_ni_6071e_analog.c",
+       "po_hi_driver_exarm_ni_6071e_digital.c",
+       "po_hi_driver_keyboard.c",
+       "po_hi_driver_linux_serial.c",
+       "po_hi_driver_rasta_1553_brmlib.c",
+       "po_hi_driver_rasta_1553.c",
+       "po_hi_driver_rasta_common.c",
+       "po_hi_driver_rasta_serial.c",
+       "po_hi_driver_rasta_spacewire.c",
+       "po_hi_driver_rtems_ne2000.c",
+       "po_hi_driver_sockets.c",
+       "po_hi_driver_stardundee.c",
+       "po_hi_driver_usbbrick_spacewire.c",
+       "po_hi_driver_xc4v_fpga.c",
+       "po_hi_giop.c",
+       "po_hi_gprof_rtems_leon.c",
+       "po_hi_lua.c",
+       --  "po_hi_monitor.c",
+       "po_hi_simulink.c",
+       "po_hi_storage.c",
+       "spwrouter_custom_config.c",
+       "star_dundee_api.c",
+       "trace_manager.c",
+       "um_threads.c",
+       "cheddar_schedule.cc",
+       "remote_configuration.cc");
+
+end Msp430fr5969_Partition_Zynq_RTEMS;

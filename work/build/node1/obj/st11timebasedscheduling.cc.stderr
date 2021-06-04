@@ -1,0 +1,64 @@
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void insertActivities(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:168:12: warning: unused variable 'currentTime' [-Wunused-variable]
+   uint32_t currentTime = getSeconds(); // Get the current system time
+            ^~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void timeShiftAllActivities(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:194:11: warning: unused variable 'current_time' [-Wunused-variable]
+  uint32_t current_time = getSeconds(); // Get the current system time
+           ^~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:196:13: warning: variable 'releaseTimes' set but not used [-Wunused-but-set-variable]
+  const auto releaseTimes =
+             ^~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void timeShiftActivitiesByID(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:211:11: warning: unused variable 'current_time' [-Wunused-variable]
+  uint32_t current_time = getSeconds(); // Get the current system time
+           ^~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void detailReportAllActivities(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:279:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   for (int i = 0; i < CCSDS_MAX_MESSAGE_SIZE; i++){
+                     ^
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:266:17: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+  asn1SccMessage report;
+                 ^~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void detailReportActivitiesByID(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:331:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   for (int i = 0; i < CCSDS_MAX_MESSAGE_SIZE; i++){
+                     ^
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:292:17: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+  asn1SccMessage report;
+                 ^~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void summaryReportActivitiesByID(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:342:17: warning: variable 'report' set but not used [-Wunused-but-set-variable]
+  asn1SccMessage report;
+                 ^~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'asn1SccMessage parseTC(uint8_t*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:396:10: warning: unused variable 'pusVersion' [-Wunused-variable]
+  uint8_t pusVersion = data[0] >> 4;
+          ^~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'uint16_t* composeECSS(asn1SccMessage)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:438:20: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  for (int i = 5; i < CCSDS_MAX_MESSAGE_SIZE; i++){
+                    ^
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:439:8: warning: comparison of integer expressions of different signedness: 'int' and 'asn1SccUInt16' {aka 'long unsigned int'} [-Wsign-compare]
+   if (i>(message.dataSize+5)){
+       ~^~~~~~~~~~~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:447:20: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  for (int i = 0; i < CCSDS_MAX_MESSAGE_SIZE/2; i++){
+                  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:445:11: warning: address of local variable 'dataString' returned [-Wreturn-local-addr]
+  uint16_t dataString[CCSDS_MAX_MESSAGE_SIZE];
+           ^~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void detailReportAllActivities(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:280:30: warning: iteration 1024 invokes undefined behavior [-Waggressive-loop-optimizations]
+    report.data.arr[counter+i]=temp_string[i];
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:279:21: note: within this loop
+   for (int i = 0; i < CCSDS_MAX_MESSAGE_SIZE; i++){
+                     ^
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc: In function 'void detailReportActivitiesByID(const asn1SccMessage*)':
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:332:30: warning: iteration 1024 invokes undefined behavior [-Waggressive-loop-optimizations]
+    report.data.arr[counter+i]=temp_string[i];
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/home/taste/Desktop/Thesis/work/st11timebasedscheduling/CPP/src/st11timebasedscheduling.cc:331:21: note: within this loop
+   for (int i = 0; i < CCSDS_MAX_MESSAGE_SIZE; i++){
+                     ^

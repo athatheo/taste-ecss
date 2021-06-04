@@ -1,0 +1,547 @@
+---------------------------------------------------
+-- AADL2.2
+-- TASTE type interfaceview
+-- 
+-- generated code: do not edit
+---------------------------------------------------
+
+PACKAGE interfaceview::IV::tc_handler
+PUBLIC
+
+WITH interfaceview::IV::ST05EventReport;
+WITH interfaceview::IV::ST08FunctionManagement;
+WITH interfaceview::IV::ST11TimeBasedScheduling;
+WITH interfaceview::IV::ST19EventAction;
+WITH interfaceview::IV::ST20ParameterService;
+WITH Taste;
+WITH DataView;
+WITH TASTE_IV_Properties;
+SUBPROGRAM PI_tc
+END PI_tc;
+
+SUBPROGRAM IMPLEMENTATION PI_tc.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 4 ms;
+END PI_tc.others;
+
+SUBPROGRAM RI_TC05
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_TC05;
+
+SUBPROGRAM IMPLEMENTATION RI_TC05.others
+END RI_TC05.others;
+
+SUBPROGRAM RI_TC08
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_TC08;
+
+SUBPROGRAM IMPLEMENTATION RI_TC08.others
+END RI_TC08.others;
+
+SUBPROGRAM RI_TC11
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_TC11;
+
+SUBPROGRAM IMPLEMENTATION RI_TC11.others
+END RI_TC11.others;
+
+SUBPROGRAM RI_TC19
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_TC19;
+
+SUBPROGRAM IMPLEMENTATION RI_TC19.others
+END RI_TC19.others;
+
+SUBPROGRAM RI_TC20
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_TC20;
+
+SUBPROGRAM IMPLEMENTATION RI_TC20.others
+END RI_TC20.others;
+
+SYSTEM tc_handler
+FEATURES
+  PI_tc : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::tc_handler::PI_tc.others {
+    Taste::coordinates => "82735 55475";
+    Taste::RCMoperationKind => cyclic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 4 ms;
+    Taste::InterfaceName => "tc";
+  };
+  RI_TC05 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST05EventReport::PI_TC05.others {
+    Taste::coordinates => "117490 54327";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "TC05";
+    Taste::labelInheritance => "true";
+  };
+  RI_TC08 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST08FunctionManagement::PI_TC08.others {
+    Taste::coordinates => "117490 60016";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "TC08";
+    Taste::labelInheritance => "true";
+  };
+  RI_TC11 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST11TimeBasedScheduling::PI_TC11.others {
+    Taste::coordinates => "117490 63176";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "TC11";
+    Taste::labelInheritance => "true";
+  };
+  RI_TC19 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST19EventAction::PI_TC19.others {
+    Taste::coordinates => "117490 66653";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "TC19";
+    Taste::labelInheritance => "true";
+  };
+  RI_TC20 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST20ParameterService::PI_TC20.others {
+    Taste::coordinates => "117490 71076";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "TC20";
+    Taste::labelInheritance => "true";
+  };
+PROPERTIES
+  Source_Language => (CPP);
+  Taste::Active_Interfaces => any;
+END tc_handler;
+
+SYSTEM IMPLEMENTATION tc_handler.others
+END tc_handler.others;
+
+END interfaceview::IV::tc_handler;
+
+PACKAGE interfaceview::IV::ST05EventReport
+PUBLIC
+
+WITH Taste;
+WITH DataView;
+WITH TASTE_IV_Properties;
+SUBPROGRAM PI_TC05
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 3;
+END PI_TC05;
+
+SUBPROGRAM IMPLEMENTATION PI_TC05.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_TC05.others;
+
+SUBPROGRAM PI_EventActionTC05
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 4;
+END PI_EventActionTC05;
+
+SUBPROGRAM IMPLEMENTATION PI_EventActionTC05.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_EventActionTC05.others;
+
+SYSTEM ST05EventReport
+FEATURES
+  PI_TC05 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST05EventReport::PI_TC05.others {
+    Taste::coordinates => "151185 54186";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 125 ms;
+    Taste::InterfaceName => "TC05";
+  };
+  PI_EventActionTC05 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST05EventReport::PI_EventActionTC05.others {
+    Taste::coordinates => "191312 53223";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 140 ms;
+    Taste::InterfaceName => "EventActionTC05";
+  };
+PROPERTIES
+  Source_Language => (CPP);
+  Taste::Active_Interfaces => any;
+END ST05EventReport;
+
+SYSTEM IMPLEMENTATION ST05EventReport.others
+END ST05EventReport.others;
+
+END interfaceview::IV::ST05EventReport;
+
+PACKAGE interfaceview::IV::ST08FunctionManagement
+PUBLIC
+
+WITH Taste;
+WITH DataView;
+WITH TASTE_IV_Properties;
+SUBPROGRAM PI_TC08
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 3;
+END PI_TC08;
+
+SUBPROGRAM IMPLEMENTATION PI_TC08.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_TC08.others;
+
+SUBPROGRAM PI_EventActionTC08
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 4;
+END PI_EventActionTC08;
+
+SUBPROGRAM IMPLEMENTATION PI_EventActionTC08.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_EventActionTC08.others;
+
+SYSTEM ST08FunctionManagement
+FEATURES
+  PI_TC08 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST08FunctionManagement::PI_TC08.others {
+    Taste::coordinates => "151344 70933";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 15 ms;
+    Taste::InterfaceName => "TC08";
+  };
+  PI_EventActionTC08 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST08FunctionManagement::PI_EventActionTC08.others {
+    Taste::coordinates => "191312 70821";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 110 ms;
+    Taste::InterfaceName => "EventActionTC08";
+  };
+PROPERTIES
+  Source_Language => (CPP);
+  Taste::Active_Interfaces => any;
+END ST08FunctionManagement;
+
+SYSTEM IMPLEMENTATION ST08FunctionManagement.others
+END ST08FunctionManagement.others;
+
+END interfaceview::IV::ST08FunctionManagement;
+
+PACKAGE interfaceview::IV::ST11TimeBasedScheduling
+PUBLIC
+
+WITH Taste;
+WITH DataView;
+WITH TASTE_IV_Properties;
+SUBPROGRAM PI_TC11
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 1;
+END PI_TC11;
+
+SUBPROGRAM IMPLEMENTATION PI_TC11.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_TC11.others;
+
+SUBPROGRAM PI_EventActionTC11
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 5;
+END PI_EventActionTC11;
+
+SUBPROGRAM IMPLEMENTATION PI_EventActionTC11.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_EventActionTC11.others;
+
+SYSTEM ST11TimeBasedScheduling
+FEATURES
+  PI_TC11 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST11TimeBasedScheduling::PI_TC11.others {
+    Taste::coordinates => "151502 88170";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 15 ms;
+    Taste::InterfaceName => "TC11";
+  };
+  PI_EventActionTC11 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST11TimeBasedScheduling::PI_EventActionTC11.others {
+    Taste::coordinates => "191312 88115";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 15 ms;
+    Taste::InterfaceName => "EventActionTC11";
+  };
+PROPERTIES
+  Source_Language => (CPP);
+  Taste::Active_Interfaces => any;
+END ST11TimeBasedScheduling;
+
+SYSTEM IMPLEMENTATION ST11TimeBasedScheduling.others
+END ST11TimeBasedScheduling.others;
+
+END interfaceview::IV::ST11TimeBasedScheduling;
+
+PACKAGE interfaceview::IV::ST19EventAction
+PUBLIC
+
+WITH interfaceview::IV::ST11TimeBasedScheduling;
+WITH interfaceview::IV::ST05EventReport;
+WITH interfaceview::IV::ST08FunctionManagement;
+WITH interfaceview::IV::ST20ParameterService;
+WITH Taste;
+WITH DataView;
+WITH TASTE_IV_Properties;
+SUBPROGRAM PI_TC19
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 3;
+END PI_TC19;
+
+SUBPROGRAM IMPLEMENTATION PI_TC19.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_TC19.others;
+
+SUBPROGRAM RI_EventActionTC11
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_EventActionTC11;
+
+SUBPROGRAM IMPLEMENTATION RI_EventActionTC11.others
+END RI_EventActionTC11.others;
+
+SUBPROGRAM RI_EventActionTC05
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_EventActionTC05;
+
+SUBPROGRAM IMPLEMENTATION RI_EventActionTC05.others
+END RI_EventActionTC05.others;
+
+SUBPROGRAM RI_EventActionTC08
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_EventActionTC08;
+
+SUBPROGRAM IMPLEMENTATION RI_EventActionTC08.others
+END RI_EventActionTC08.others;
+
+SUBPROGRAM RI_EventActionTC20
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+END RI_EventActionTC20;
+
+SUBPROGRAM IMPLEMENTATION RI_EventActionTC20.others
+END RI_EventActionTC20.others;
+
+SYSTEM ST19EventAction
+FEATURES
+  PI_TC19 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST19EventAction::PI_TC19.others {
+    Taste::coordinates => "151502 106004";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 15 ms;
+    Taste::InterfaceName => "TC19";
+  };
+  RI_EventActionTC11 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST11TimeBasedScheduling::PI_EventActionTC11.others {
+    Taste::coordinates => "190838 103318";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "EventActionTC11";
+    Taste::labelInheritance => "true";
+  };
+  RI_EventActionTC05 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST05EventReport::PI_EventActionTC05.others {
+    Taste::coordinates => "190838 106921";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "EventActionTC05";
+    Taste::labelInheritance => "true";
+  };
+  RI_EventActionTC08 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST08FunctionManagement::PI_EventActionTC08.others {
+    Taste::coordinates => "190838 105140";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "EventActionTC08";
+    Taste::labelInheritance => "true";
+  };
+  RI_EventActionTC20 : REQUIRES SUBPROGRAM ACCESS interfaceview::IV::ST20ParameterService::PI_EventActionTC20.others {
+    Taste::coordinates => "190838 111060";
+    Taste::RCMoperationKind => any;
+    Taste::InterfaceName => "EventActionTC20";
+    Taste::labelInheritance => "true";
+  };
+PROPERTIES
+  Source_Language => (CPP);
+  Taste::Active_Interfaces => any;
+END ST19EventAction;
+
+SYSTEM IMPLEMENTATION ST19EventAction.others
+END ST19EventAction.others;
+
+END interfaceview::IV::ST19EventAction;
+
+PACKAGE interfaceview::IV::ST20ParameterService
+PUBLIC
+
+WITH Taste;
+WITH DataView;
+WITH TASTE_IV_Properties;
+SUBPROGRAM PI_TC20
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 5;
+END PI_TC20;
+
+SUBPROGRAM IMPLEMENTATION PI_TC20.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_TC20.others;
+
+SUBPROGRAM PI_EventActionTC20
+FEATURES
+  message : IN PARAMETER DataView::Message {
+    Taste::encoding => NATIVE;
+  };
+PROPERTIES
+  Taste::Associated_Queue_Size => 4;
+END PI_EventActionTC20;
+
+SUBPROGRAM IMPLEMENTATION PI_EventActionTC20.others
+PROPERTIES
+  Compute_Execution_Time => 0 ms .. 15 ms;
+END PI_EventActionTC20.others;
+
+SYSTEM ST20ParameterService
+FEATURES
+  PI_TC20 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST20ParameterService::PI_TC20.others {
+    Taste::coordinates => "151502 119748";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 15 ms;
+    Taste::InterfaceName => "TC20";
+  };
+  PI_EventActionTC20 : PROVIDES SUBPROGRAM ACCESS interfaceview::IV::ST20ParameterService::PI_EventActionTC20.others {
+    Taste::coordinates => "190680 119906";
+    Taste::RCMoperationKind => sporadic;
+    Taste::RCMperiod => 150 ms;
+    Taste::Deadline => 15 ms;
+    Taste::InterfaceName => "EventActionTC20";
+  };
+PROPERTIES
+  Source_Language => (CPP);
+  Taste::Active_Interfaces => any;
+END ST20ParameterService;
+
+SYSTEM IMPLEMENTATION ST20ParameterService.others
+END ST20ParameterService.others;
+
+END interfaceview::IV::ST20ParameterService;
+
+PACKAGE interfaceview::IV
+PUBLIC
+
+WITH interfaceview::IV::tc_handler;
+WITH interfaceview::IV::ST05EventReport;
+WITH interfaceview::IV::ST08FunctionManagement;
+WITH interfaceview::IV::ST11TimeBasedScheduling;
+WITH interfaceview::IV::ST19EventAction;
+WITH interfaceview::IV::ST20ParameterService;
+WITH Taste;
+WITH DataView;
+WITH TASTE_IV_Properties;
+SYSTEM interfaceview
+PROPERTIES
+  Taste::dataView => ("DataView");
+  Taste::dataViewPath => ("DataView.aadl");
+END interfaceview;
+
+SYSTEM IMPLEMENTATION interfaceview.others
+SUBCOMPONENTS
+  tc_handler : SYSTEM interfaceview::IV::tc_handler::tc_handler.others {
+    Taste::coordinates => "82735 50536 117490 72180";
+  };
+  ST05EventReport : SYSTEM interfaceview::IV::ST05EventReport::ST05EventReport.others {
+    Taste::coordinates => "151185 50237 191312 64771";
+  };
+  ST08FunctionManagement : SYSTEM interfaceview::IV::ST08FunctionManagement::ST08FunctionManagement.others {
+    Taste::coordinates => "151344 68405 191312 81201";
+  };
+  ST11TimeBasedScheduling : SYSTEM interfaceview::IV::ST11TimeBasedScheduling::ST11TimeBasedScheduling.others {
+    Taste::coordinates => "151502 84993 191312 98105";
+  };
+  ST19EventAction : SYSTEM interfaceview::IV::ST19EventAction::ST19EventAction.others {
+    Taste::coordinates => "151502 101264 190838 113113";
+  };
+  ST20ParameterService : SYSTEM interfaceview::IV::ST20ParameterService::ST20ParameterService.others {
+    Taste::coordinates => "151502 117062 190680 129859";
+  };
+CONNECTIONS
+  tc_handler_RI_TC05_ST05EventReport_PI_TC05 : SUBPROGRAM ACCESS ST05EventReport.PI_TC05 -> tc_handler.RI_TC05 {
+    Taste::coordinates => "117490 54327 134834 54327 134834 54186 151185 54186";
+  };
+  tc_handler_RI_TC08_ST08FunctionManagement_PI_TC08 : SUBPROGRAM ACCESS ST08FunctionManagement.PI_TC08 -> tc_handler.RI_TC08 {
+    Taste::coordinates => "117490 60016 142448 60016 142448 70933 151344 70933";
+  };
+  tc_handler_RI_TC11_ST11TimeBasedScheduling_PI_TC11 : SUBPROGRAM ACCESS ST11TimeBasedScheduling.PI_TC11 -> tc_handler.RI_TC11 {
+    Taste::coordinates => "117490 63176 138519 63176 138519 88170 151502 88170";
+  };
+  tc_handler_RI_TC19_ST19EventAction_PI_TC19 : SUBPROGRAM ACCESS ST19EventAction.PI_TC19 -> tc_handler.RI_TC19 {
+    Taste::coordinates => "117490 66653 134440 66653 134440 106004 151502 106004";
+  };
+  tc_handler_RI_TC20_ST20ParameterService_PI_TC20 : SUBPROGRAM ACCESS ST20ParameterService.PI_TC20 -> tc_handler.RI_TC20 {
+    Taste::coordinates => "117490 71076 130324 71076 130324 119748 151502 119748";
+  };
+  ST19EventAction_RI_EventActionTC05_ST05EventReport_PI_EventActionTC05 : SUBPROGRAM ACCESS ST05EventReport.PI_EventActionTC05 -> ST19EventAction.RI_EventActionTC05 {
+    Taste::coordinates => "190838 106921 199027 106921 199027 53223 191312 53223";
+  };
+  ST19EventAction_RI_EventActionTC08_ST08FunctionManagement_PI_EventActionTC08 : SUBPROGRAM ACCESS ST08FunctionManagement.PI_EventActionTC08 -> ST19EventAction.RI_EventActionTC08 {
+    Taste::coordinates => "190838 105140 197119 105140 197119 70821 191312 70821";
+  };
+  ST19EventAction_RI_EventActionTC11_ST11TimeBasedScheduling_PI_EventActionTC11 : SUBPROGRAM ACCESS ST11TimeBasedScheduling.PI_EventActionTC11 -> ST19EventAction.RI_EventActionTC11 {
+    Taste::coordinates => "190838 103318 195293 103318 195293 88115 191312 88115";
+  };
+  ST19EventAction_RI_EventActionTC20_ST20ParameterService_PI_EventActionTC20 : SUBPROGRAM ACCESS ST20ParameterService.PI_EventActionTC20 -> ST19EventAction.RI_EventActionTC20 {
+    Taste::coordinates => "190838 111060 194772 111060 194772 119906 190680 119906";
+  };
+END interfaceview.others;
+
+PROPERTIES
+  Taste::dataView => ("DataView");
+  Taste::dataViewPath => ("DataView.aadl");
+  Taste::coordinates => "0 0 297000 210000";
+  Taste::version => "2.4";
+END interfaceview::IV;
+

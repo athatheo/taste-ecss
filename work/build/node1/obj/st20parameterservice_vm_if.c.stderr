@@ -1,0 +1,6 @@
+In file included from /home/taste/Desktop/Thesis/work/st20parameterservice/CPP/src/st20parameterservice.h:15,
+                 from /home/taste/Desktop/Thesis/work/st20parameterservice/CPP/wrappers/st20parameterservice_vm_if.h:30,
+                 from /home/taste/Desktop/Thesis/work/st20parameterservice/CPP/wrappers/st20parameterservice_vm_if.c:10:
+/home/taste/Desktop/Thesis/work/dataview/C/dataview-uniq.h:598:9: warning: struct has no members [-Wpedantic]
+ typedef struct {
+         ^~~~~~

@@ -1,0 +1,95 @@
+--  Node name          : msp430fr5969_partition
+--  Execution platform : PLATFORM_MSP430_FREERTOS
+-- Generic gprbuild configuration file for rtems5 with Ada support for leon3
+configuration project ZYNQ_RTEMS is
+   package Compiler is
+      for Driver ("C") use "/opt/rtems-5.1-2020.04.29/bin/arm-rtems5-gcc";
+      for Driver ("Ada") use "/opt/rtems-5.1-2020.04.29/bin/arm-rtems5-gcc";
+      for Driver ("C++") use "/opt/rtems-5.1-2020.04.29/bin/arm-rtems5-g++";
+      for Driver ("FPGA") use "bambu";
+
+      for Leading_Required_Switches ("C") use ("-c");
+      for Leading_Required_Switches ("C++") use ("-c");
+
+      for Required_Switches("Ada") use
+         ("-c",
+          "-x",
+          "ada",
+          "-gnatA");
+
+      Common_C_Switches :=
+         ("--pipe",
+          "-DRTEMS_POSIX",
+          "-DRTEMS412",
+          "-DTARGET=zynq",
+          "-mthumb",
+          "-march=armv7-a",
+          "-mfpu=neon",
+          "-mfloat-abi=hard",
+          "-mtune=cortex-a9",
+          "-B/opt/rtems-5.1-2020.04.29/arm-rtems5/xilinx_zynq_zc706/lib",
+          "-specs=bsp_specs",
+          "-qrtems");
+
+      for Required_Switches("C") use Common_C_Switches;
+      for Required_Switches("C++") use Common_C_Switches;
+
+      for Object_File_Suffix ("C") use ".o";
+      for Object_File_Suffix ("C++") use ".o";
+      for Object_File_Suffix ("Ada") use ".o";
+      for Object_File_Suffix ("FPGA") use ".vhd";
+      for Dependency_Switches ("C") use ("-Wp,-MD,");
+      for Dependency_Switches ("C++") use ("-Wp,-MD,");
+      for Dependency_Switches ("Ada") use ("-MMD","-MF","");
+      for Include_Switches ("C") use ("-I");
+      for Include_Switches ("C++") use ("-I");
+      for Include_Switches ("Ada") use ("-I");
+      for Include_Path ("Ada") use "ADA_INCLUDE_PATH";
+      for Include_Path_File ("Ada") use "ADA_PRJ_INCLUDE_FILE";
+      for Mapping_File_Switches ("Ada") use ("-gnatem=");
+   end Compiler;
+   package Naming is
+      for Spec_Suffix ("C") use ".h";
+      for Body_Suffix ("C") use ".c";
+      for Spec_Suffix ("Ada") use ".ads";
+      for Body_Suffix ("Ada") use ".adb";
+       for Body_Suffix ("C++") use ".cc";
+      for Spec_Suffix ("FPGA") use ".h";
+      for Body_Suffix ("FPGA") use ".c";
+      for Dot_Replacement use "-";
+   end Naming;
+   for Archive_Builder use ("/opt/rtems-5.1-2020.04.29/bin/arm-rtems5-ar" , "cr");
+
+   package Linker is
+      for Driver use "/opt/rtems-5.1-2020.04.29/bin/arm-rtems5-gcc";
+
+      Common_C_Linker_Switches :=
+           ("--pipe",
+            "-mthumb",
+            "-march=armv7-a",
+            "-mfpu=neon",
+            "-mfloat-abi=hard",
+            "-mtune=cortex-a9",
+            "-g",
+            "-fdiagnostics-show-option",
+            "-ffunction-sections",
+            "-B/opt/rtems-5.1-2020.04.29/arm-rtems5/xilinx_zynq_zc706/lib",
+            "-specs=bsp_specs",
+            "-qrtems",
+            "-lm",
+            "-lbsd",
+            "-Wl,-gc-sections");
+
+       for Default_Switches ("C") use Common_C_Linker_Switches;
+       for Default_Switches ("C++") use Common_C_Linker_Switches;
+       for Default_Switches ("Ada") use
+           ("--pipe",
+            "-g",
+            "-B/opt/rtems-5.1-2020.04.29/arm-rtems5/xilinx_zynq_zc706/lib",
+            "-specs=bsp_specs",
+            "-qrtems",
+            "-lm",
+            "-lgnat");
+
+   end Linker;
+end ZYNQ_RTEMS;

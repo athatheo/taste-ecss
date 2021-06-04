@@ -1,0 +1,19 @@
+all: msp430fr5969_partition
+
+
+
+msp430fr5969_partition :
+	echo "Building HW functions for partition msp430fr5969_partition"
+
+
+
+
+
+
+
+
+
+
+.PHONY: all msp430fr5969_partition
+
+

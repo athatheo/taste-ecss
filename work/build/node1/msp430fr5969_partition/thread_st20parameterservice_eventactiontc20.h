@@ -1,0 +1,6 @@
+#ifndef st20parameterservice_EventActionTC20_INCLUDED
+#define st20parameterservice_EventActionTC20_INCLUDED
+
+void prv_st20parameterservice_EventActionTC20_Task(void* prParameters);
+
+#endif
